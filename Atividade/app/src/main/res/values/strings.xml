@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Atividade</string>
+    <string-array name="itens">
+        <item>Rotina</item>
+        <item>Dia a dia</item>
+        <item>Lazer</item>
+        <item>Resposabilidade</item>
+    </string-array>
+</resources>

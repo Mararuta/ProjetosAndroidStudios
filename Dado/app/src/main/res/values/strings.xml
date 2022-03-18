@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dado</string>
+    <string name="dado6">DADO 6 LADOS</string>
+    <string name="dado12">DADO 12 LADOS</string>
+    <string name="dado20">DADO 20 LADOS</string>
+    <string name="rolar_dado6">JOGAR DADO</string>
+    <string name="rolar_dado12">JOGAR DADO</string>
+    <string name="rolar_dado20">JOGAR DADO</string>
+    <string name="titulo">Selecione uma das opções</string>
+    <string name="voltar">Voltar</string>
+</resources>
