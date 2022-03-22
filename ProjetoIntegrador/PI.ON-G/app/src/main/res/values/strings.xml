@@ -6,4 +6,6 @@
         <item>Alimenticia</item>
         <item>Animais</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="FloatingButton">FloatingAdd</string>
 </resources>
