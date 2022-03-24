@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.generation.adapterlist.R
+import com.generation.adapterlista.R
 import com.generation.todo.model.Tarefa
 
 class TarefaAdapter : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
