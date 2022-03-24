@@ -7,11 +7,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.generation.todo.model.Categoria
 import com.generation.todo.respository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
+import javax.inject.Inject
 
-class MainViewModel(
+@HiltViewModel // Indica que a nossa viewModel vai Injetar Dependências
+//@Inject -> para saber o que vai injetar ([contrutor] nesse caso.)
+class MainViewModel @Inject constructor(
     val repository:Repository
     ): ViewModel () {
         private val _responseListCategoria =
@@ -19,7 +23,8 @@ class MainViewModel(
 
     val responseListCategoria: LiveData<Response<List<Categoria>>> =
         _responseListCategoria
-      init {
+
+    init {
           listCategoria()
       }
     fun listCategoria(){

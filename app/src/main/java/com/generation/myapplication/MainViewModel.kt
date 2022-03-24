@@ -1,4 +1,12 @@
 package com.generation.myapplication
 
-class MainViewModel {
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+class MainViewModel : ViewModel(){
+    var cont  =  MutableLiveData (0)
+    fun adicionar (){
+        cont.value = cont.value!! + 1
+
+    }
 }

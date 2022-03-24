@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
@@ -13,12 +14,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.generation.todo.adapter.TarefaAdapter
 import com.generation.todo.databinding.FragmentFormBinding
 import com.generation.todo.databinding.FragmentListBinding
+import com.generation.todo.mainviewmodel.MainViewModel
 import com.generation.todo.model.Tarefa
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListFragment : Fragment() {
 
     private lateinit var binding: FragmentListBinding
+    private val mainViewModel : MainViewModel by activityViewModels ()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="clique_o_mais_r_pido_que_conseguir">Clique o mais rápido que conseguir !!!</string>
+    <string name="n_meros_de_cliques">Números de cliques :</string>
+    <string name="_0">0</string>
+    <string name="clique">Clique !</string>
+</resources>
