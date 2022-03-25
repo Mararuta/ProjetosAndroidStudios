@@ -3,4 +3,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="floatingActionButton">Adicionar Nova Tarefa</string>
     <string name="em_andamento">Em Andamento</string>
+    <string name="salvar">Salvar</string>
+    <string name="data">Data</string>
+    <string name="responsavel">Responsavel</string>
+    <string name="descricao">Descricao</string>
+    <string name="nome">Nome</string>
 </resources>

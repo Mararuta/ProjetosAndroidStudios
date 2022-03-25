@@ -11,6 +11,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
+import java.time.LocalDate
 import javax.inject.Inject
 
 @HiltViewModel // Indica que a nossa viewModel vai Injetar Dependências
@@ -24,7 +25,11 @@ class MainViewModel @Inject constructor(
     val responseListCategoria: LiveData<Response<List<Categoria>>> =
         _responseListCategoria
 
+
+    val dataSelecionada = MutableLiveData<LocalDate>()
+
     init {
+        dataSelecionada.value = LocalDate.now()
           listCategoria()
       }
     fun listCategoria(){
