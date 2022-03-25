@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <targetSelectedWithDropDown>
+      <Target>
+        <type value="QUICK_BOOT_TARGET" />
+        <deviceKey>
+          <Key>
+            <type value="VIRTUAL_DEVICE_PATH" />
+            <value value="C:\Users\WIN 10 PRO\.android\avd\Pixel_4_API_29_1.avd" />
+          </Key>
+        </deviceKey>
+      </Target>
+    </targetSelectedWithDropDown>
+    <timeTargetWasSelectedWithDropDown value="2022-03-20T23:36:56.980618400Z" />
+    <targetsSelectedWithDialog>
+      <Target>
+        <type value="BOOT_WITH_SNAPSHOT_TARGET" />
+        <deviceKey>
+          <Key>
+            <type value="VIRTUAL_DEVICE_PATH" />
+            <value value="C:\Users\WIN 10 PRO\.android\avd\Pixel_4_API_29.avd" />
+          </Key>
+        </deviceKey>
+        <snapshotKey value="C:\Users\WIN 10 PRO\.android\avd\Pixel_4_API_29.avd\snapshots\snap_2022-03-19_09-42-42" />
+      </Target>
+    </targetsSelectedWithDialog>
+  </component>
+</project>
