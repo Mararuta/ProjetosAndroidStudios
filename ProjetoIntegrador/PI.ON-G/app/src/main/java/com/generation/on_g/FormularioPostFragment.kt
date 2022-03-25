@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.generation.on_g.databinding.ActivityMainBinding
 
 class FormularioPostFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,6 +21,7 @@ class FormularioPostFragment : Fragment() {
 
         buttonPublicar.setOnClickListener {
             findNavController().navigate(R.id.action_formularioPostFragment_to_postagemFragment)
+
 
         }
         return view
