@@ -33,14 +33,14 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
-       val postagem =  ListPost[position]
+        val postagem =  ListPost[position]
 
         holder.textTitulo.text  = postagem.titulo
         holder.textLocal.text  = postagem.localizacao
         holder.textDescri.text  = postagem.descricao
-        holder.textCatego.text  = postagem.categoria
-        holder.textAutor.text  = postagem.autor
-        holder.textDaHr.text  = postagem.dataEHora
+        holder.textCatego.text  = postagem.categoria.descricao
+        //holder.textAutor.text  = postagem.autor
+        //holder.textDaHr.text  = postagem.dataEHora
     }
 
     override fun getItemCount(): Int {
