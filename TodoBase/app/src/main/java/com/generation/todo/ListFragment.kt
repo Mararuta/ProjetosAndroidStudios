@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
@@ -14,9 +15,12 @@ import com.generation.todo.adapter.TarefaAdapter
 import com.generation.todo.databinding.FragmentFormBinding
 import com.generation.todo.databinding.FragmentListBinding
 import com.generation.todo.model.Tarefa
+import com.generation.todo.mvvm.MainViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListFragment : Fragment() {
+
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     private lateinit var binding: FragmentListBinding
 
@@ -24,6 +28,9 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        mainViewModel.listTarefa()
+
         // Inflate the layout for this fragment
 
         binding = FragmentListBinding.inflate(
@@ -64,13 +71,13 @@ class ListFragment : Fragment() {
         //Configurar o Adapter
 
         //Instaciar o adapter
-        val adapter = TarefaAdapter()
+        val adapterTarefa = TarefaAdapter()
 
         //Definir o Layout Manager da RecyclerView
         binding.recyclerTarefa.layoutManager = LinearLayoutManager(context)
 
         //Passar o adapter criado para o recyclerTarefa
-        binding.recyclerTarefa.adapter = adapter
+        binding.recyclerTarefa.adapter = adapterTarefa
 
         //Definir a lista para ter um tamanho fixo indepedente dos itens
         binding.recyclerTarefa.setHasFixedSize(true)
@@ -83,6 +90,12 @@ class ListFragment : Fragment() {
         //Navegação para o Fragment de Form
         binding.floatingAdd.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_formFragment)
+        }
+
+        mainViewModel.myTarefaResponse.observe(viewLifecycleOwner) {
+                response -> if (response != null) {
+                adapterTarefa.setLista(response.body()!!)
+            }
         }
 
         return binding.root
