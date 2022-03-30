@@ -6,17 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.generation.on_g.adapter.PostAdapter
 import com.generation.on_g.databinding.FragmentPostagemBinding
-import com.generation.on_g.modelo.Postagem
 import com.generation.on_g.mvvm.MainViewModel
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class PostagemFragment : Fragment() {
 
@@ -27,13 +22,11 @@ class PostagemFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mainViewModel.postagem()
+        mainViewModel.listPostagem()
 
         binding = FragmentPostagemBinding.inflate(
                         layoutInflater, container,false
         )
-
-
 
          /*
         val view = inflater.inflate(R.layout.fragment_postagem, container, false)
@@ -75,18 +68,19 @@ class PostagemFragment : Fragment() {
 
 
         //val floatingAdd = view.findViewById<FloatingActionButton>(R.id.floatingAdd)
-
+        val postAdapter = PostAdapter()
         binding.floatingAdd.setOnClickListener{
             findNavController().navigate(R.id.action_postagemFragment_to_formularioPostFragment)
         }
-        mainViewModel.myPostagemResponse.observe(viewLifecycleOwner, {
-            response -> if(response != null){
-
+        mainViewModel.myPostagemResponse.observe(viewLifecycleOwner)
+        { response -> if (response.body() != null) {
+               postAdapter.attList(response.body()!!)
+            }
+            Log.d("requisição", response.body().toString())
         }
-        })
 
         val recyclerPost = binding.recyclerPost
-        val postAdapter = PostAdapter()
+
 
         binding.recyclerPost.adapter = postAdapter
         binding.recyclerPost.setHasFixedSize(true)

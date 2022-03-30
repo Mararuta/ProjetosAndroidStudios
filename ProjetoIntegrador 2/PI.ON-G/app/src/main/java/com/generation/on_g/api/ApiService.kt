@@ -9,15 +9,16 @@ import retrofit2.http.POST
 
 interface ApiService {
     //Requisição das categorias - Lista de categorias
-    @GET("categoria")
+    @GET("temas")
     suspend fun listCategoria (): Response<List<Categoria>>
-    //Adicionar Tarefa
-    @POST
-    suspend fun addPostagem(
-        @Body tarefa: Postagem
-    ): Response<Postagem>
 
     //Requisições das Postagens
-    @GET("postagem")
-    suspend fun postagem(): Response<List<Postagem>>
+    @GET("postagens")
+    suspend fun listPostagem(): Response<List<Postagem>>
+
+    //Adicionar Tarefa
+    @POST("postagens")
+    suspend fun addPostagem(
+        @Body postagem: Postagem
+    ): Response<Postagem>
 }
