@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SQL COM ROOM</string>
+    <string name="nome">nome</string>
+    <string name="sobrenome">sobrenome</string>
+    <string name="idade">idade</string>
+    <string name="cadastrar">cadastrar</string>
+</resources>
