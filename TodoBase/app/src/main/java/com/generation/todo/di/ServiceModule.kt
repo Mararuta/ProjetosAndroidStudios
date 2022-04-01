@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @InstallIn (SingletonComponent::class) //indica que a classe criara objetos singleton
 object ServiceModule {
 
-    @Provides // Indicar que o métodos que criaremos rertonará uma instancia de objeto
+    @Provides // Indicar que os métodos que criaremos rertonará uma instancia de objeto
     @Singleton // indicando o objeto que estamos criando vai ser Singleton
     fun providesRepository () : Repository {
         return Repository()

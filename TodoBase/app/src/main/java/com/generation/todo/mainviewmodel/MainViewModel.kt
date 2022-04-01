@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.generation.todo.model.Categoria
+import com.generation.todo.model.Tarefa
 import com.generation.todo.respository.Repository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -19,27 +20,54 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     val repository:Repository
     ): ViewModel () {
-        private val _responseListCategoria =
-            MutableLiveData<Response<List<Categoria>>>()
+    private val _responseListCategoria =
+        MutableLiveData<Response<List<Categoria>>>()
 
     val responseListCategoria: LiveData<Response<List<Categoria>>> =
         _responseListCategoria
 
+    private val _myTarefaResponse =
+        MutableLiveData<Response<List<Tarefa>>>()
+
+    val myTarefaReponse:LiveData<Response<List<Tarefa>>> =
+          _myTarefaResponse
 
     val dataSelecionada = MutableLiveData<LocalDate>()
 
     init {
         dataSelecionada.value = LocalDate.now()
-          listCategoria()
-      }
-    fun listCategoria(){
+        listCategoria()
+    }
+
+    fun listCategoria() {
         viewModelScope.launch {
-                try {
-                 val response = repository.listCategoria()
-                    _responseListCategoria.value = response
-                }catch (e : Exception){
-                    Log.d("ErroRequisicao", e.message.toString())
-                }
+            try {
+                val response = repository.listCategoria()
+                _responseListCategoria.value = response
+            } catch (e: Exception) {
+                Log.d("ErroRequisicao", e.message.toString())
+            }
         }
     }
+
+    fun addTarefa(tarefa: Tarefa) {
+        viewModelScope.launch {
+            try {
+                repository.addTarefa(tarefa)
+                listTarefas()
+            } catch (e: Exception) {
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+   fun listTarefas(){
+       viewModelScope.launch {
+       try {
+           val response = repository.listTarefas()
+           _myTarefaResponse.value = response
+       } catch (e: Exception){
+           Log.e("Developer", "Error", e )
+       }
+       }
+   }
 }

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Jetpack Room</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="idade">Idade</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="_1">1</string>
+    <string name="kaio">Kaio</string>
+    <string name="leite">Leite</string>
+    <string name="_24">24</string>
+</resources>

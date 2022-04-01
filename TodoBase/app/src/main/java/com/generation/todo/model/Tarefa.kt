@@ -1,14 +1,13 @@
 package com.generation.todo.model
 
-data class Tarefa (
-    var id : Long,
+data class Tarefa(
+    val id: Long,
     var nome: String,
     var descricao: String,
     var responsavel: String,
     var data: String,
     var status: Boolean,
-    var tarefa: Tarefa,
     var categoria: Categoria,
 
-        ){
+    ){
 }

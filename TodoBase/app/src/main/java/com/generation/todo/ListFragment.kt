@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -28,8 +29,9 @@ class ListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        mainViewModel.listTarefas()
 
+        // Inflate the layout for this fragment
         binding = FragmentListBinding.inflate(
             layoutInflater, container, false
         )
@@ -54,6 +56,11 @@ class ListFragment : Fragment() {
             findNavController().navigate(R.id.action_listFragment_to_formFragment)
         }
 
+        mainViewModel.myTarefaReponse.observe(viewLifecycleOwner, {
+                response -> if (response != null){
+                    adapter.setLista(response.body()!!)
+             }
+        })
         return binding.root
     }
 
