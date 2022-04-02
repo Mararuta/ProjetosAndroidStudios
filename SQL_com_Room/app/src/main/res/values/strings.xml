@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SQL_com_Room</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="nome">Nome</string>
+    <string name="idade">Idade</string>
+    <string name="id">Id</string>
+    <string name="textnome">TextNome</string>
+    <string name="textsobrenome">TextSobrenome</string>
+    <string name="textidade">TextIdade</string>
+</resources>
