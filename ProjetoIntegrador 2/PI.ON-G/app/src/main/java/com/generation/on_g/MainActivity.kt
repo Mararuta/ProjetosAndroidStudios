@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,5 +18,17 @@ class MainActivity : AppCompatActivity() {
         if(supportActionBar != null){
             supportActionBar?.hide()
         }
+
+
+        /*val nome = intent.getStringExtra("NOME")
+
+        val textGuarda = findViewById<TextView>(R.id.texGuarda)
+        if (nome != null) {
+
+            textGuarda.text = "$nome"
+
+        }
+
+         */
     }
 }

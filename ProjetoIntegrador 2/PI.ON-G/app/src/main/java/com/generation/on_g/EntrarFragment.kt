@@ -1,5 +1,6 @@
 package com.generation.on_g
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +22,8 @@ class EntrarFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentEntrarBinding.inflate(layoutInflater, container, false)
 
+        val intent = Intent(context, MainActivity::class.java)
+
         binding.ButtonEntrar.setOnClickListener {
             val email = binding.editEmailE.text.toString()
             val senha = binding.editSenhaE.text.toString()
@@ -30,11 +33,11 @@ class EntrarFragment : Fragment() {
                     Toast.LENGTH_LONG).show()
 
             }else{
-                findNavController().navigate(R.id.action_entrarFragment2_to_postagemFragment)
+                startActivity(intent)
             }
         }
         binding.ButtonRegistrarE.setOnClickListener {
-            findNavController().navigate(R.id.action_entrarFragment2_to_registroFragment)
+            findNavController().navigate(R.id.action_entrarFragment_to_registroFragment)
         }
         return binding.root
     }

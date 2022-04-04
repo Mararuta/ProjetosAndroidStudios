@@ -11,7 +11,7 @@
         android:id="@+id/imageLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/logo_menor2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/imageNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="24dp"
         android:src="@drawable/nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -122,52 +122,15 @@
         app:layout_constraintStart_toStartOf="@+id/imageTelefone"
         app:layout_constraintTop_toTopOf="@+id/imageTelefone" />
 
-    <EditText
-        android:id="@+id/editSenha"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="3dp"
-        android:backgroundTint="#00FFFFFF"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#6A6565"
-        app:layout_constraintBottom_toBottomOf="@+id/imageSenha"
-        app:layout_constraintEnd_toEndOf="@+id/imageSenha"
-        app:layout_constraintStart_toStartOf="@+id/imageSenha"
-        app:layout_constraintTop_toTopOf="@+id/imageSenha" />
-
-    <EditText
-        android:id="@+id/editConfiSenha"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#00FFFFFF"
-        android:ems="10"
-        android:hint="Confirmar Senha"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#6A6565"
-        app:layout_constraintBottom_toBottomOf="@+id/imageConfiSenha"
-        app:layout_constraintEnd_toEndOf="@+id/imageConfiSenha"
-        app:layout_constraintStart_toStartOf="@+id/imageConfiSenha"
-        app:layout_constraintTop_toTopOf="@+id/imageConfiSenha" />
-
     <ImageButton
         android:id="@+id/ButtonRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_width="420dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:src="@drawable/registro2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageConfiSenha" />
 
@@ -180,5 +143,120 @@
         app:layout_constraintEnd_toEndOf="@+id/imageLogo"
         app:layout_constraintStart_toStartOf="@+id/imageLogo"
         app:layout_constraintTop_toTopOf="@+id/imageLogo" />
+
+
+    <TextView
+        android:id="@+id/textAviso"
+        android:layout_width="363dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#C708E8"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonRegistrar"
+        tools:text="text digito" />
+
+    <EditText
+        android:id="@+id/editSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#00FFFFFF"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#6A6565"
+        app:layout_constraintBottom_toTopOf="@+id/imageConfiSenha"
+        app:layout_constraintEnd_toEndOf="@+id/imageSenha"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/imageSenha"
+        app:layout_constraintTop_toBottomOf="@+id/imageTelefone"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <EditText
+        android:id="@+id/editConfiSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:ems="10"
+        android:hint="Confirmar Senha"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#6A6565"
+        app:layout_constraintBottom_toTopOf="@+id/ButtonRegistrar"
+        app:layout_constraintEnd_toEndOf="@+id/imageConfiSenha"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toStartOf="@+id/imageConfiSenha"
+        app:layout_constraintTop_toBottomOf="@+id/imageSenha" />
+
+    <TextView
+        android:id="@+id/textDigito"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#C708E8"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAviso"
+        tools:text="contem 1 digito" />
+
+    <TextView
+        android:id="@+id/textLetraMai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#C708E8"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDigito"
+        tools:text="text letra maiuscula" />
+
+    <TextView
+        android:id="@+id/textAvisoEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#C708E8"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMinu"
+        tools:text="text verifca email" />
+
+    <TextView
+        android:id="@+id/textMinu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#C708E8"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLetraMai"
+        tools:text="text letra minuscula" />
+
+    <TextView
+        android:id="@+id/textvalidaTel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textColor="#C708E8"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textAvisoEmail"
+        tools:text=" text verifica tel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
