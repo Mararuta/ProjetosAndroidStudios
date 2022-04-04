@@ -16,12 +16,12 @@ import com.generation.on_g.modelo.Categoria
 import com.generation.on_g.modelo.Postagem
 
 import com.generation.on_g.mvvm.MainViewModel
-import java.time.LocalDate
 
 class FormularioPostFragment : Fragment() {
 
     private val mainViewModel: MainViewModel by activityViewModels()
     private lateinit var binding: FragmentFormularioPostBinding
+
     private var categoriaSelecionada = 0L
 
     override fun onCreateView(
@@ -40,10 +40,14 @@ class FormularioPostFragment : Fragment() {
         }
 
         binding.buttonPublicar.setOnClickListener {
-        inserirNoBanco()
+            findNavController().navigate(R.id.action_formularioPostFragment_to_postagemFragment)
+
         }
 
-         return binding.root
+        binding.buttonPublicar.setOnClickListener {
+            //inserirNoBanco()
+        }
+        return binding.root
     }
     fun spinnerCategoria(categorias: List<Categoria>?) {
 
@@ -74,29 +78,28 @@ class FormularioPostFragment : Fragment() {
                 }
         }
     }
-
-    fun validarCampos(
+    fun validaCampos(
         titulo: String, desc: String, link: String,
-         ): Boolean {
+        localizacao: String
+    ): Boolean {
 
         return !(
                 (titulo == "" || titulo.length < 3 || titulo.length > 20) ||
                         (desc == "" || desc.length < 5 || desc.length > 300) ||
-                        (link == "" || link.length < 3 || link.length > 100)
+                        (link == "" || link.length < 3 || link.length > 20) ||
+                        (localizacao == "" || localizacao.length < 5 || localizacao.length > 25)
                 )
-    }
+    }/*
     fun inserirNoBanco() {
 
         val titulo = binding.editTitulo.text.toString()
         val desc = binding.editTextDescri.text.toString()
-        val link = binding.editTextLink.text.toString()
-        val autor = "usuário"
-        val dataHora = LocalDate.now().toString()
+        val localizacao = binding.editLoca.text.toString()
         val categoria = Categoria(categoriaSelecionada, null, null)
 
-        if (validarCampos(titulo, desc, link)) {
+        if (validaCampos(titulo, desc, localizacao)) {
             val postagem = Postagem(0,
-                titulo, desc, link, dataHora, autor, categoria)
+                titulo, desc, localizacao, categoria)
 
             mainViewModel.addPostagem(postagem)
             Toast.makeText(context, "Postagem Salva", Toast.LENGTH_LONG).show()
@@ -107,6 +110,8 @@ class FormularioPostFragment : Fragment() {
 
         }
     }
+
+ */
 }
 
 

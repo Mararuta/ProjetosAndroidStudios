@@ -33,6 +33,16 @@ class registroFragment : Fragment() {
                 || senha.isEmpty() || confirSenha.isEmpty()){
                 Toast.makeText(context, "Preencha todos os campos!", Toast.LENGTH_LONG
                 ).show()
+
+            }else if (senha != confirSenha){
+                Toast.makeText(context, "Confirme a senha corretamente!", Toast.LENGTH_LONG
+                ).show()
+
+            }else if (senha.length < 8 && confirSenha.length < 8 ||
+                senha.length > 20 && confirSenha.length > 20) {
+                Toast.makeText(context, "A senha tem que conter de 8 até 20 caracteres", Toast.LENGTH_LONG
+                ).show()
+
             }else{
                 findNavController().navigate(R.id.action_registroFragment_to_postagemFragment)
             }

@@ -28,6 +28,7 @@ class EntrarFragment : Fragment() {
             if (email.isEmpty() || senha.isEmpty()){
                 Toast.makeText(context, "Preencha os campos corretamente!",
                     Toast.LENGTH_LONG).show()
+
             }else{
                 findNavController().navigate(R.id.action_entrarFragment2_to_postagemFragment)
             }

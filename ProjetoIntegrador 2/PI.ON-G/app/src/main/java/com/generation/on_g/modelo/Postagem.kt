@@ -6,9 +6,9 @@ data class Postagem(
     val id : Long,
     var titulo : String,
     var descricao : String,
-    var imagem : String,
-    var dataHora : String,
-    var autor : String,
-    var tema : Categoria
+    var localizacao : String,
+    var categoria : Categoria,
+    //var autor : String,
+    //var dataEHora : String
     ){
 }

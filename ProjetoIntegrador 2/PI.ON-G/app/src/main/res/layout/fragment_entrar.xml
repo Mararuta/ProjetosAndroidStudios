@@ -21,7 +21,7 @@
         android:id="@+id/imageNomeE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#00FFFFFF"
-        android:src="@drawable/entrar"
+        android:src="@drawable/entrartest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageSenhaE" />
@@ -62,10 +62,11 @@
         android:id="@+id/ButtonRegistrarE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#00FFFFFF"
-        android:src="@drawable/registrar_se"
+        android:src="@drawable/frame_5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageTraco" />
 
@@ -80,6 +81,7 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         android:textColorHint="#6A6565"
         app:layout_constraintBottom_toBottomOf="@+id/imageNomeE"
         app:layout_constraintEnd_toEndOf="@+id/imageNomeE"
@@ -97,9 +99,20 @@
         android:hint="Senha"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColor="#FFFFFF"
         android:textColorHint="#6A6565"
         app:layout_constraintBottom_toBottomOf="@+id/imageSenhaE"
         app:layout_constraintEnd_toEndOf="@+id/imageSenhaE"
         app:layout_constraintStart_toStartOf="@+id/imageSenhaE"
         app:layout_constraintTop_toTopOf="@+id/imageSenhaE" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ong"
+        app:layout_constraintBottom_toBottomOf="@+id/imageLogoE"
+        app:layout_constraintEnd_toEndOf="@+id/imageLogoE"
+        app:layout_constraintStart_toStartOf="@+id/imageLogoE"
+        app:layout_constraintTop_toTopOf="@+id/imageLogoE" />
 </androidx.constraintlayout.widget.ConstraintLayout>

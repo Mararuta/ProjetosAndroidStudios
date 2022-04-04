@@ -51,17 +51,16 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 repository.addPostagem(postagem)
-                listPostagem()
             } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
         }
     }
 
-    fun listPostagem(){
+    fun postagem(){
         viewModelScope.launch{
             try{
-                val response = repository.listPostagem()
+                val response = repository.postagem()
                 _myPostagemResponse.value = response
             }catch (e: Exception){
                 Log.e("Developer", "Error", e)
