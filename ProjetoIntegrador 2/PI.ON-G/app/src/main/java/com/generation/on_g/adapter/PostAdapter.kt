@@ -36,10 +36,11 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
         val postagem =  ListPost[position]
 
         holder.textTitulo.text  = postagem.titulo
+        holder.textLocal.text  = postagem.localizacao
         holder.textDescri.text  = postagem.descricao
-        holder.textCatego.text  = postagem.tema.descricao
-        holder.textAutor.text  = postagem.autor
-        holder.textDaHr.text  = postagem.dataHora
+        holder.textCatego.text  = postagem.categoria.descricao
+        //holder.textAutor.text  = postagem.autor
+        //holder.textDaHr.text  = postagem.dataEHora
     }
 
     override fun getItemCount(): Int {
