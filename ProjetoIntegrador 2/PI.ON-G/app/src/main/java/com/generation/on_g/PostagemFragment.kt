@@ -13,12 +13,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.on_g.adapter.PostAdapter
+import com.generation.on_g.adapter.TaskItemClickListener
 import com.generation.on_g.databinding.FragmentPostagemBinding
 import com.generation.on_g.modelo.Postagem
 import com.generation.on_g.mvvm.MainViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class PostagemFragment : Fragment() {
+class PostagemFragment : Fragment(), TaskItemClickListener{
 
     private val mainViewModel: MainViewModel by activityViewModels()
     private lateinit var binding : FragmentPostagemBinding
@@ -77,23 +78,31 @@ class PostagemFragment : Fragment() {
         //val floatingAdd = view.findViewById<FloatingActionButton>(R.id.floatingAdd)
 
         binding.floatingAdd.setOnClickListener{
+            mainViewModel.postagemSelecionada = null
             findNavController().navigate(R.id.action_postagemFragment_to_formularioPostFragment)
         }
-        mainViewModel.myPostagemResponse.observe(viewLifecycleOwner, {
-            response -> if(response != null){
 
-        }
-        })
 
         val recyclerPost = binding.recyclerPost
-        val postAdapter = PostAdapter()
+        val postAdapter = PostAdapter(this, mainViewModel)
 
         binding.recyclerPost.adapter = postAdapter
         binding.recyclerPost.setHasFixedSize(true)
         //postAdapter.attList(listPostagem)
         binding.recyclerPost.layoutManager = LinearLayoutManager(context)
 
+        mainViewModel.myPostagemResponse.observe(viewLifecycleOwner, {
+
+                response -> if(response != null){
+                    postAdapter.attList(response.body()!!)
+        }
+        })
 
         return binding.root
+    }
+
+    override fun onTaskClicked(postagem: Postagem) {
+        mainViewModel.postagemSelecionada = postagem
+        findNavController().navigate(R.id.action_postagemFragment_to_formularioPostFragment)
     }
 }

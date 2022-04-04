@@ -16,6 +16,7 @@ import com.generation.on_g.modelo.Categoria
 import com.generation.on_g.modelo.Postagem
 
 import com.generation.on_g.mvvm.MainViewModel
+import java.time.LocalDate
 
 class FormularioPostFragment : Fragment() {
 
@@ -23,6 +24,8 @@ class FormularioPostFragment : Fragment() {
     private lateinit var binding: FragmentFormularioPostBinding
 
     private var categoriaSelecionada = 0L
+
+    private var postagemSelecionada: Postagem? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +36,8 @@ class FormularioPostFragment : Fragment() {
             layoutInflater, container, false
         )
 
+        carregarDados()
+
         mainViewModel.listCategoria()
         mainViewModel.myCategoriaResponse.observe(viewLifecycleOwner){
                 response -> Log.d("Requisição", response.body().toString())
@@ -40,13 +45,9 @@ class FormularioPostFragment : Fragment() {
         }
 
         binding.buttonPublicar.setOnClickListener {
-            findNavController().navigate(R.id.action_formularioPostFragment_to_postagemFragment)
-
+            inserirNoBanco()
         }
 
-        binding.buttonPublicar.setOnClickListener {
-            //inserirNoBanco()
-        }
         return binding.root
     }
     fun spinnerCategoria(categorias: List<Categoria>?) {
@@ -79,29 +80,39 @@ class FormularioPostFragment : Fragment() {
         }
     }
     fun validaCampos(
-        titulo: String, desc: String, link: String,
-        localizacao: String
+        titulo: String, desc: String, link: String
+        //localizacao: String
     ): Boolean {
 
         return !(
                 (titulo == "" || titulo.length < 3 || titulo.length > 20) ||
                         (desc == "" || desc.length < 5 || desc.length > 300) ||
-                        (link == "" || link.length < 3 || link.length > 20) ||
-                        (localizacao == "" || localizacao.length < 5 || localizacao.length > 25)
+                        (link == "" || link.length < 3 || link.length > 20)
+                        //(localizacao == "" || localizacao.length < 5 || localizacao.length > 25)
                 )
-    }/*
+    }
     fun inserirNoBanco() {
 
         val titulo = binding.editTitulo.text.toString()
         val desc = binding.editTextDescri.text.toString()
-        val localizacao = binding.editLoca.text.toString()
+        val link = binding.editTextLink.text.toString()
+        val autor = "usuário"
+        val dataHora = LocalDate.now().toString()
         val categoria = Categoria(categoriaSelecionada, null, null)
 
-        if (validaCampos(titulo, desc, localizacao)) {
-            val postagem = Postagem(0,
-                titulo, desc, localizacao, categoria)
+        if (validaCampos(titulo, desc, link)) {
+            if(postagemSelecionada == null) {
+                val postagem = Postagem(0,
+                    titulo, desc, link, dataHora, autor, categoria)
 
-            mainViewModel.addPostagem(postagem)
+                mainViewModel.addPostagem(postagem)
+            } else{
+                val postagem = Postagem(
+                    postagemSelecionada?.id!!,
+                    titulo, desc, link, dataHora, autor, categoria
+                )
+                mainViewModel.updatePostagem(postagem)
+            }
             Toast.makeText(context, "Postagem Salva", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_formularioPostFragment_to_postagemFragment)
 
@@ -111,7 +122,17 @@ class FormularioPostFragment : Fragment() {
         }
     }
 
- */
+
+    private fun carregarDados(){
+        postagemSelecionada = mainViewModel.postagemSelecionada
+        if (postagemSelecionada != null){
+            binding.editTitulo.setText(postagemSelecionada?.titulo)
+            binding.editTextDescri.setText(postagemSelecionada?.descricao)
+        } else {
+            binding.editTitulo.text = null
+            binding.editTextDescri.text = null
+        }
+    }
 }
 
 

@@ -6,18 +6,25 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface ApiService {
     //Requisição das categorias - Lista de categorias
-    @GET("categoria")
+    @GET("temas")
     suspend fun listCategoria (): Response<List<Categoria>>
     //Adicionar Tarefa
-    @POST
+
+    @POST ("postagens")
     suspend fun addPostagem(
-        @Body tarefa: Postagem
+        @Body postagem: Postagem
+    ): Response<Postagem>
+
+    @PUT ("postagens")
+    suspend fun updatePostagem(
+        @Body postagem: Postagem
     ): Response<Postagem>
 
     //Requisições das Postagens
-    @GET("postagem")
+    @GET("postagens")
     suspend fun postagem(): Response<List<Postagem>>
 }

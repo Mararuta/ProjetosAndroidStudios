@@ -3,13 +3,18 @@ package com.generation.on_g.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.on_g.R
 import com.generation.on_g.modelo.Postagem
+import com.generation.on_g.mvvm.MainViewModel
 
-class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+class PostAdapter (
+    private val taskItemClickListener: TaskItemClickListener,
+    private val mainViewModel: MainViewModel
+        ): RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
     private var ListPost = emptyList<Postagem>()
 
@@ -22,7 +27,7 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
         val textCatego = view.findViewById<TextView>(R.id.textCatego)
         val textAutor = view.findViewById<TextView>(R.id.textAutor)
         val textDaHr = view.findViewById<TextView>(R.id.textDaHr)
-
+        val postButtonEdit = view.findViewById<ImageButton>(R.id.editPost)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -36,11 +41,18 @@ class PostAdapter : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
         val postagem =  ListPost[position]
 
         holder.textTitulo.text  = postagem.titulo
-        holder.textLocal.text  = postagem.localizacao
         holder.textDescri.text  = postagem.descricao
-        holder.textCatego.text  = postagem.categoria.descricao
-        //holder.textAutor.text  = postagem.autor
-        //holder.textDaHr.text  = postagem.dataEHora
+        holder.textCatego.text  = postagem.tema.descricao
+        holder.textAutor.text  = postagem.autor
+        holder.textDaHr.text  = postagem.datahora
+
+
+      /* holder.itemView.setOnClickListener{
+            taskItemClickListener.onTaskClicked(postagem)
+        }*/
+        holder.postButtonEdit.setOnClickListener{
+            taskItemClickListener.onTaskClicked(postagem)
+        }
     }
 
     override fun getItemCount(): Int {
