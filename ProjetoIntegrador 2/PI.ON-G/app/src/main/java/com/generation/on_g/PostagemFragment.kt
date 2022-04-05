@@ -1,5 +1,6 @@
 package com.generation.on_g
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -34,6 +35,7 @@ class PostagemFragment : Fragment(), TaskItemClickListener{
                         layoutInflater, container,false
         )
 
+        val intentMaps = Intent(context, MapsMainActivity::class.java)
 
 
          /*
@@ -45,35 +47,8 @@ class PostagemFragment : Fragment(), TaskItemClickListener{
             "Vestimentas",
             "Campanha do Agasalho",
             "22-03-2022 / 09:00"
-
-        ),Postagem(
-            "Doação de Comida",
-            "Rua Tres, Zona Sul - SP",
-            "Doações feitas na igreja, Santuarios Mãe de Deus",
-            "Alimenticia",
-            "Campanha FomeZero",
-            "26-03-2022 / 12:00"
-
-        ),Postagem(
-            "Itens Básicos",
-            "Rua Quatro, Zona Norte - SP",
-            "Coleta de doações na zona norte - Online",
-            "Humanitário",
-            "Projeto Mais Amor SP",
-            "25-03-2022 / 09:00"
-
-        ),Postagem(
-            " +Ração e -MausTratos ",
-            "Rua Cinco, Zona Oeste - SP",
-            "Distribuição de ração para animais de rua e suporte veterinário",
-            "Animais",
-            "Projeto PetLove",
-            "22-03-2022 / 07:00"
-        ))
-
+        )
           */
-
-
 
         //val floatingAdd = view.findViewById<FloatingActionButton>(R.id.floatingAdd)
 
@@ -82,6 +57,9 @@ class PostagemFragment : Fragment(), TaskItemClickListener{
             findNavController().navigate(R.id.action_postagemFragment_to_formularioPostFragment)
         }
 
+       binding.bMaps.setOnClickListener {
+           startActivity(intentMaps)
+       }
 
         val recyclerPost = binding.recyclerPost
         val postAdapter = PostAdapter(this, mainViewModel)
