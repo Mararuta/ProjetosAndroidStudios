@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/group_4"
     android:backgroundTint="#D0000000"
     android:backgroundTintMode="screen"
     tools:context=".MainActivity">
@@ -14,15 +13,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="80dp"
-        android:backgroundTint="#37333D"
-        android:backgroundTintMode="src_in"
+        android:backgroundTint="#232125"
         android:ems="10"
         android:hint="Digite um título"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,12 +33,11 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="80dp"
         android:backgroundTint="#37333D"
-        android:backgroundTintMode="src_in"
         android:ems="10"
         android:hint="Descrição"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTitulo" />
@@ -53,11 +50,11 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="12dp"
         android:backgroundTint="#37333D"
-        android:backgroundTintMode="src_in"
         android:ems="10"
         android:hint="Link"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/buttonLink"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescri" />
@@ -67,7 +64,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="12dp"
         android:layout_marginEnd="80dp"
         android:backgroundTint="#B304FF"
         android:entries="@array/itens"
@@ -75,14 +71,14 @@
         android:popupBackground="?attr/colorSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editLoca" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextLink" />
 
     <Button
         android:id="@+id/buttonPublicar"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#E604FF"
         android:text="Publicar"
@@ -90,23 +86,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria" />
-
-    <EditText
-        android:id="@+id/editLoca"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="12dp"
-        android:backgroundTint="#37333D"
-        android:backgroundTintMode="src_in"
-        android:ems="10"
-        android:hint="Localização"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/buttonLocali"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLink" />
 
     <Button
         android:id="@+id/buttonLink"
@@ -118,16 +97,5 @@
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescri" />
-
-    <Button
-        android:id="@+id/buttonLocali"
-        android:layout_width="41dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="25dp"
-        android:backgroundTint="#E604FF"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLink" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
