@@ -1,17 +1,21 @@
 package com.generation.on_g.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.on_g.R
 import com.generation.on_g.modelo.Postagem
 import com.generation.on_g.mvvm.MainViewModel
 
 class PostAdapter (
+    private val context: Context?,
     private val taskItemClickListener: TaskItemClickListener,
     private val mainViewModel: MainViewModel
         ): RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
@@ -56,7 +60,8 @@ class PostAdapter (
             taskItemClickListener.onTaskClicked(postagem)
         }
         holder.deleteButton.setOnClickListener{
-            mainViewModel.deletePostagem(postagem.id)
+            launchAlertDialog(postagem.id)
+
         }
     }
 
@@ -67,5 +72,21 @@ class PostAdapter (
     fun attList (Post : List<Postagem>){
         ListPost = Post
         notifyDataSetChanged()
+    }
+
+
+
+    private fun launchAlertDialog(id:Long) {
+        val builder = AlertDialog.Builder(context!!)
+            .setTitle("Alerta!!!")
+            .setMessage("Deseja deletar postagem?")
+            .setPositiveButton("Ok") { dialogInterface, i ->
+
+                mainViewModel.deletePostagem(id)
+                Toast.makeText(context, "Postagem deletada com sucesso", Toast.LENGTH_SHORT).show()
+
+            }
+            .setNegativeButton("Cancel") { dialogInterface, i -> dialogInterface.cancel() }
+        builder.show()
     }
 }
