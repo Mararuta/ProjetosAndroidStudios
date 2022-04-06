@@ -87,7 +87,7 @@ class FormularioPostFragment : Fragment() {
         return !(
                 (titulo == "" || titulo.length < 3 || titulo.length > 20) ||
                         (desc == "" || desc.length < 5 || desc.length > 300) ||
-                        (link == "" || link.length < 3 || link.length > 20)
+                        (link == "" || link.length < 3 || link.length > 300)
                         //(localizacao == "" || localizacao.length < 5 || localizacao.length > 25)
                 )
     }

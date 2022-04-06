@@ -49,10 +49,12 @@ class MainViewModel @Inject constructor(
         }
     }
 
+
     fun addPostagem(postagem: Postagem) {
         viewModelScope.launch {
             try {
                 repository.addPostagem(postagem)
+                postagem()
             } catch (e: Exception) {
                 Log.d("Erro", e.message.toString())
             }
@@ -74,7 +76,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 repository.updatePostagem(postagem)
-                listCategoria()
+                postagem()
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
             }
@@ -84,7 +86,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 repository.deletePostagem(id)
-                listCategoria()
+                postagem()
             }catch (e: Exception){
                 Log.d("Erro", e.message.toString())
             }
