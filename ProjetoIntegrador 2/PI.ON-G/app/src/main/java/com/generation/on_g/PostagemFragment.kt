@@ -66,7 +66,7 @@ class PostagemFragment : Fragment(), TaskItemClickListener{
        }
 
         val recyclerPost = binding.recyclerPost
-        val postAdapter = PostAdapter(context, this, mainViewModel)
+        val postAdapter = PostAdapter(context,this, mainViewModel)
 
         binding.recyclerPost.adapter = postAdapter
         binding.recyclerPost.setHasFixedSize(true)
