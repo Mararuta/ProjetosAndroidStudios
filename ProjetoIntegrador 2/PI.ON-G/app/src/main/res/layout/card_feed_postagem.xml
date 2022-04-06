@@ -8,7 +8,7 @@
     android:layout_margin="0dp"
     android:padding="10dp"
     app:cardBackgroundColor="#FBFBFB"
-    app:cardCornerRadius="15dp"
+    app:cardCornerRadius="0dp"
     app:cardElevation="0dp">
 
     <LinearLayout
@@ -24,8 +24,8 @@
 
             <TextView
                 android:id="@+id/textTitulo"
-                android:layout_width="310dp"
-                android:layout_height="match_parent"
+                android:layout_width="305dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="5dp"
@@ -35,21 +35,21 @@
 
             <ImageButton
                 android:id="@+id/editPost"
-                android:layout_width="wrap_content"
+                android:layout_width="48dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="@string/editPost"
                 android:minWidth="48dp"
-                app:srcCompat="@android:drawable/ic_menu_edit"
+                app:srcCompat="@drawable/edit"
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
                 android:id="@+id/deleteButton"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
-                app:srcCompat="@drawable/ic_baseline_delete_24"
-                android:contentDescription="TODO" />
+                android:contentDescription="@string/deleteButton"
+                app:srcCompat="@drawable/trash_2" />
 
         </LinearLayout>
 
@@ -63,11 +63,10 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="TODO"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@drawable/oip" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/oip" />
 
         <TextView
             android:id="@+id/textDescri"
@@ -109,4 +108,5 @@
             android:textSize="20sp" />
 
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>
