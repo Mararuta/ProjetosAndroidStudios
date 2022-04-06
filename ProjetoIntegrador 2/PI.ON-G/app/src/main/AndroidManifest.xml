@@ -23,6 +23,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".MapsMainActivity"
+            android:exported="true" />
+        <activity
             android:name=".RegistroActivity"
             android:exported="true">
             <intent-filter>
