@@ -20,15 +20,15 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        /*val nome = intent.getStringExtra("NOME")
+        val nome = intent.getStringExtra("NOME")
 
-        val textGuarda = findViewById<TextView>(R.id.texGuarda)
+        val textGuarda = findViewById<TextView>(R.id.textGuarda)
         if (nome != null) {
 
             textGuarda.text = "$nome"
 
         }
 
-         */
+
     }
 }

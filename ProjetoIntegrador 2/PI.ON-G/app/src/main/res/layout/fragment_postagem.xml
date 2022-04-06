@@ -11,13 +11,11 @@
         android:id="@+id/recyclerPost"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="1dp"
         app:layout_constraintBottom_toTopOf="@+id/navigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
@@ -72,21 +70,24 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="44dp"
-                android:layout_height="35dp"
+                android:layout_width="55dp"
+                android:layout_height="48dp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/circled_chevron_left"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/imageView5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.575" />
+                app:layout_constraintVertical_bias="0.575"
+                app:srcCompat="@drawable/home_page" />
 
             <ImageButton
                 android:id="@+id/bMaps"
-                android:layout_width="33dp"
-                android:layout_height="38dp"
+                android:layout_width="86dp"
+                android:layout_height="65dp"
                 android:backgroundTint="#00FFFFFF"
-                android:src="@drawable/region_code"
+                android:scaleType="fitCenter"
+                android:src="@drawable/place_marker"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"

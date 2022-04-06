@@ -38,6 +38,10 @@ class PostagemFragment : Fragment(), TaskItemClickListener{
         val intentMaps = Intent(context, MapsMainActivity::class.java)
 
 
+
+
+
+
          /*
         val view = inflater.inflate(R.layout.fragment_postagem, container, false)
         val listPostagem = mutableListOf(Postagem(

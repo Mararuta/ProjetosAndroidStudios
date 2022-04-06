@@ -32,10 +32,16 @@ class EntrarFragment : Fragment() {
                 Toast.makeText(context, "Preencha os campos corretamente!",
                     Toast.LENGTH_LONG).show()
 
-            }else{
+            }else if (email.isNotEmpty()){
+
+                val nome = binding.editEmailE.text.toString()
+                intent.putExtra("NOME", nome)
                 startActivity(intent)
             }
         }
+
+
+
         binding.ButtonRegistrarE.setOnClickListener {
             findNavController().navigate(R.id.action_entrarFragment_to_registroFragment)
         }

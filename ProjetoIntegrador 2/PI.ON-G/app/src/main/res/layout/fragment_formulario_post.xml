@@ -74,20 +74,6 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextLink" />
 
     <Button
-        android:id="@+id/buttonPublicar"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="#E604FF"
-        android:text="Publicar"
-        app:cornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria" />
-
-    <Button
         android:id="@+id/buttonLink"
         android:layout_width="42dp"
         android:layout_height="41dp"
@@ -97,5 +83,17 @@
         android:text="+"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescri" />
+
+    <ImageButton
+        android:id="@+id/buttonPublicar"
+        android:layout_width="433dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="172dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria"
+        app:srcCompat="@drawable/publicar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
