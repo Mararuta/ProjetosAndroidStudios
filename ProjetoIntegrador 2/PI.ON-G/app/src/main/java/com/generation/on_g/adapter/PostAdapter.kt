@@ -10,11 +10,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.generation.on_g.R
 import com.generation.on_g.modelo.Postagem
 import com.generation.on_g.mvvm.MainViewModel
 
 class PostAdapter (
+    //private val ccontext: Context,
     private val context: Context?,
     private val taskItemClickListener: TaskItemClickListener,
     private val mainViewModel: MainViewModel
@@ -50,6 +52,14 @@ class PostAdapter (
         holder.textCatego.text  = postagem.tema.descricao
         holder.textAutor.text  = postagem.autor
         holder.textDaHr.text  = postagem.datahora
+
+     //Implementação do Glide
+        Glide
+            .with(context!!)
+            .load(postagem.imagem)
+            .centerCrop()
+            .placeholder(android.R.drawable.ic_menu_report_image)
+            .into(holder.imageView)
 
 
 
