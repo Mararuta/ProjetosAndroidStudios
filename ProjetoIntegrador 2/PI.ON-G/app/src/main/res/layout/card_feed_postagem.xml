@@ -5,11 +5,11 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="0dp"
+    android:layout_marginTop="5dp"
     android:padding="10dp"
     app:cardBackgroundColor="#FBFBFB"
     app:cardCornerRadius="0dp"
-    app:cardElevation="2dp">
+    app:cardElevation="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
