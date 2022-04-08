@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Task do PI</string>
+    <string name="app_name">ON-G</string>
     <string-array name="itens">
         <item>Humanitária</item>
         <item>Vestimentas</item>

@@ -85,8 +85,8 @@ class FormularioPostFragment : Fragment() {
     ): Boolean {
 
         return !(
-                (titulo == "" || titulo.length < 3 || titulo.length > 20) ||
-                        (desc == "" || desc.length < 5 || desc.length > 300) ||
+                (titulo == "" || titulo.length < 3 || titulo.length > 40) ||
+                        (desc == "" || desc.length < 5 || desc.length > 500) ||
                         (link == "" || link.length < 3 || link.length > 300)
                         //(localizacao == "" || localizacao.length < 5 || localizacao.length > 25)
                 )
@@ -96,7 +96,7 @@ class FormularioPostFragment : Fragment() {
         val titulo = binding.editTitulo.text.toString()
         val desc = binding.editTextDescri.text.toString()
         val link = binding.editTextLink.text.toString()
-        val autor = "usuário"
+        val autor = binding.editAutor.text.toString()
         val dataHora = LocalDate.now().toString()
         val categoria = Categoria(categoriaSelecionada, null, null)
 
@@ -129,10 +129,12 @@ class FormularioPostFragment : Fragment() {
             binding.editTitulo.setText(postagemSelecionada?.titulo)
             binding.editTextDescri.setText(postagemSelecionada?.descricao)
             binding.editTextLink.setText(postagemSelecionada?.imagem)
+            binding.editAutor.setText(postagemSelecionada?.autor)
         } else {
             binding.editTitulo.text = null
             binding.editTextDescri.text = null
             binding.editTextLink.text = null
+            binding.editAutor.text = null
         }
     }
 }
