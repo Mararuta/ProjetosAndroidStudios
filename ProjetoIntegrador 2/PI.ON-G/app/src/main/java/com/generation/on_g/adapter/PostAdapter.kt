@@ -26,7 +26,6 @@ class PostAdapter (
     class PostViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
         val textTitulo = view.findViewById<TextView>(R.id.textTitulo)
-
         val imageView = view.findViewById<ImageView>(R.id.imageView)
         val textDescri = view.findViewById<TextView>(R.id.textDescri)
         val textCatego = view.findViewById<TextView>(R.id.textCatego)

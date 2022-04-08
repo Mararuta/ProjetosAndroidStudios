@@ -128,9 +128,11 @@ class FormularioPostFragment : Fragment() {
         if (postagemSelecionada != null){
             binding.editTitulo.setText(postagemSelecionada?.titulo)
             binding.editTextDescri.setText(postagemSelecionada?.descricao)
+            binding.editTextLink.setText(postagemSelecionada?.imagem)
         } else {
             binding.editTitulo.text = null
             binding.editTextDescri.text = null
+            binding.editTextLink.text = null
         }
     }
 }
